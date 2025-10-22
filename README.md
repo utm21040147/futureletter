@@ -1,108 +1,66 @@
-Carta al Futuro (futureletter)
+<div align="center">
 
-Aplicación móvil multiplataforma que permite a los usuarios escribir mensajes para sí mismos, guardarlos de forma segura en su dispositivo y especificar una fecha futura para su "entrega" conceptual.
+# 📬 FutureLetter: Carta al Futuro
 
-📖 Descripción
+<p>
+  <a href="#-descripción">Descripción</a> •
+  <a href="#-características-principales">Características</a> •
+  <a href="#-tecnologías">Tecnologías</a> •
+  <a href="#-instalación">Instalación</a> •
+  <a href="#-autor">Autor</a>
+</p>
 
-El objetivo de este proyecto fue desarrollar una aplicación móvil utilizando Flutter. La aplicación, denominada "Carta al Futuro", permite a los usuarios escribir mensajes, guardarlos en una base de datos local y seguro, y tener una forma de recordar esos pensamientos en el futuro.
+![Flutter Shield](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart Shield](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 
-El desarrollo se centró en crear una experiencia de usuario limpia, segura y funcional, cumpliendo con todos los requisitos especificados.
+</div>
 
-✨ Características
+---
 
-Autenticación Dual:
+## 📖 Descripción
 
-Inicio de sesión tradicional con usuario y contraseña (credenciales harcodeadas: user / password).
+**FutureLetter** es una aplicación móvil desarrollada con Flutter que permite a los usuarios escribir y guardar mensajes para su "yo" del futuro. La aplicación se enfoca en una experiencia segura y personal, almacenando todas las cartas de forma local en el dispositivo.
 
-Inicio de sesión biométrico mediante huella digital o reconocimiento facial.
+## ✨ Características Principales
 
-Almacenamiento Local Seguro:
+-   **Autenticación Segura**:
+    -   **Credenciales**: Inicio de sesión tradicional con usuario/contraseña.
+    -   **Biometría**: Acceso rápido y seguro mediante huella digital o reconocimiento facial (`local_auth`).
+-   **Almacenamiento Persistente**:
+    -   Las cartas se guardan en una base de datos **SQLite** local, garantizando que los datos persisten incluso si la app se cierra.
+-   **Interfaz Intuitiva**:
+    -   Un formulario claro y sencillo para escribir la carta, con un límite de 500 caracteres.
+    -   Selección de la "fecha de entrega" conceptual (6 meses, 1 año, 2 años).
+-   **Widget Multiplataforma**:
+    -   Un indicador dinámico en el `AppBar` que muestra la plataforma actual (Android, Windows, Web), demostrando la adaptabilidad del código.
 
-Toda la información se guarda de forma persistente en una base de datos local SQLite.
+## 🛠️ Tecnologías
 
-Composición de Cartas:
+| Tecnología | Propósito                               |
+| :----------- | :---------------------------------------- |
+| **Flutter** | Framework para el desarrollo multiplataforma. |
+| **Dart** | Lenguaje de programación.                 |
+| **SQLite** | Sistema de base de datos local.           |
+| `sqflite`    | Plugin para la integración con SQLite.    |
+| `local_auth` | Plugin para la autenticación biométrica.  |
 
-Editor de texto con un límite de 500 caracteres.
+## 🚀 Instalación
 
-Selección de fecha de "entrega" (6 meses, 1 año, 2 años).
+Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local.
 
-Indicador de Plataforma Dinámico:
+### 1. Prerrequisitos
 
-Un widget en el AppBar que muestra en qué plataforma se está ejecutando la app (Android, Windows, Web, etc.).
+-   Tener [Flutter SDK](https://flutter.dev/docs/get-started/install) instalado.
+-   Un emulador de Android/iOS o un dispositivo físico.
 
-🛠️ Tecnologías Utilizadas
+### 2. Configuración del Proyecto
 
-Framework: Flutter 3.x
-
-Lenguaje: Dart
-
-Base de Datos: SQLite
-
-Paquetes Clave:
-
-sqflite: Para la gestión de la base de datos local.
-
-path: Para la correcta localización de la ruta de la base de datos.
-
-local_auth: Para la funcionalidad de autenticación biométrica.
-
-🚀 Instalación y Puesta en Marcha
-
-Para ejecutar este proyecto localmente, sigue estos pasos:
-
-1. Prerrequisitos
-
-Asegúrate de tener el Flutter SDK instalado en tu máquina.
-
-2. Clonar el Repositorio
-
+```bash
+# 1. Clona el repositorio
 git clone [https://github.com/tu-usuario/futureletter.git](https://github.com/tu-usuario/futureletter.git)
+
+# 2. Navega al directorio del proyecto
 cd futureletter
 
-
-3. Instalar Dependencias
-
-Ejecuta el siguiente comando en la raíz del proyecto para instalar todos los paquetes necesarios.
-
+# 3. Instala las dependencias
 flutter pub get
-
-
-4. Configuración Nativa (¡Importante!)
-
-Para que la autenticación biométrica funcione, necesitas realizar las siguientes configuraciones:
-
-Android:
-
-Añade el permiso en android/app/src/main/AndroidManifest.xml (antes de la etiqueta <application>):
-
-<uses-permission android:name="android.permission.USE_BIOMETRIC"/>
-
-
-Cambia la clase base en android/app/src/main/kotlin/.../MainActivity.kt:
-
-import io.flutter.embedding.android.FlutterFragmentActivity
-class MainActivity: FlutterFragmentActivity() {}
-
-
-iOS:
-
-Añade la descripción de uso en ios/Runner/Info.plist:
-
-<key>NSFaceIDUsageDescription</key>
-<string>Necesitamos tu permiso para usar Face ID y autenticarte.</string>
-
-
-5. Ejecutar la Aplicación
-
-Conecta un dispositivo o inicia un emulador y ejecuta el siguiente comando:
-
-flutter run
-
-
-👤 Autor
-
-Isaac Reyes
-
-📜 Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
